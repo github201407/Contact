@@ -7,27 +7,26 @@ package com.jen.async.contact;
 public class Plaxo {
 
     private Long id;
-    private String userid;
-    private String regtime;
-    /** Not-null value. */
-    private String actiontype;
-    private String updatetime;
-    private String name;
-    private String phone;
-    private String workphone;
-    private String homephone;
-    private String photo;
-    private String email;
-    private String workemail;
-    private String address;
-    private String groups;
-    private String custom;
+    private String userid="";
+    private String regtime="";
+    private String actiontype="";
+    private String updatetime="";
+    private String name="";
+    private String phone="";
+    private String workphone="";
+    private String homephone="";
+    private String photo="";
+    private String email="";
+    private String workemail="";
+    private String address="";
+    private String groups="";
+    private String custom="";
     private Integer raw_contacts_version;
     private Integer server_version;
     private Long creation_time;
-    private String contact_id;
-    private String raw_contact_id;
-    private String org;
+    private String contact_id="";
+    private String raw_contact_id="";
+    private String org="";
 
     public Plaxo() {
     }
@@ -84,12 +83,10 @@ public class Plaxo {
         this.regtime = regtime;
     }
 
-    /** Not-null value. */
     public String getActiontype() {
         return actiontype;
     }
 
-    /** Not-null value; ensure this value is available before it is saved to the database. */
     public void setActiontype(String actiontype) {
         this.actiontype = actiontype;
     }

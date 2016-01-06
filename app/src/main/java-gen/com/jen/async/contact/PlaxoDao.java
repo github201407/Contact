@@ -62,7 +62,7 @@ public class PlaxoDao extends AbstractDao<Plaxo, Long> {
                 "\"_id\" INTEGER PRIMARY KEY ," + // 0: id
                 "\"USERID\" TEXT," + // 1: userid
                 "\"REGTIME\" TEXT," + // 2: regtime
-                "\"ACTIONTYPE\" TEXT NOT NULL ," + // 3: actiontype
+                "\"ACTIONTYPE\" TEXT," + // 3: actiontype
                 "\"UPDATETIME\" TEXT," + // 4: updatetime
                 "\"NAME\" TEXT," + // 5: name
                 "\"PHONE\" TEXT," + // 6: phone
@@ -107,7 +107,11 @@ public class PlaxoDao extends AbstractDao<Plaxo, Long> {
         if (regtime != null) {
             stmt.bindString(3, regtime);
         }
-        stmt.bindString(4, entity.getActiontype());
+ 
+        String actiontype = entity.getActiontype();
+        if (actiontype != null) {
+            stmt.bindString(4, actiontype);
+        }
  
         String updatetime = entity.getUpdatetime();
         if (updatetime != null) {
@@ -208,7 +212,7 @@ public class PlaxoDao extends AbstractDao<Plaxo, Long> {
             cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0), // id
             cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1), // userid
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // regtime
-            cursor.getString(offset + 3), // actiontype
+            cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3), // actiontype
             cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4), // updatetime
             cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5), // name
             cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6), // phone
@@ -236,7 +240,7 @@ public class PlaxoDao extends AbstractDao<Plaxo, Long> {
         entity.setId(cursor.isNull(offset + 0) ? null : cursor.getLong(offset + 0));
         entity.setUserid(cursor.isNull(offset + 1) ? null : cursor.getString(offset + 1));
         entity.setRegtime(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
-        entity.setActiontype(cursor.getString(offset + 3));
+        entity.setActiontype(cursor.isNull(offset + 3) ? null : cursor.getString(offset + 3));
         entity.setUpdatetime(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
         entity.setName(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
         entity.setPhone(cursor.isNull(offset + 6) ? null : cursor.getString(offset + 6));
