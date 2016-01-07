@@ -7,26 +7,33 @@ package com.jen.async.contact;
 public class Plaxo {
 
     private Long id;
-    private String userid="";
-    private String regtime="";
-    private String actiontype="";
-    private String updatetime="";
-    private String name="";
-    private String phone="";
-    private String workphone="";
-    private String homephone="";
-    private String photo="";
-    private String email="";
-    private String workemail="";
-    private String address="";
-    private String groups="";
-    private String custom="";
+    private String userid;
+    private String regtime;
+    private String actiontype;
+    private String updatetime;
+    private String states;
+    /** Not-null value. */
+    private String name;
+    private String phone;
+    private String workphone;
+    private String homephone;
+    private String photo;
+    private String email;
+    private String workemail;
+    private String address;
+    private String groups;
+    private String custom;
+    private String companynumber;
+    private String departmentnumber;
+    private String shortName;
+    private String ou;
+    private String titlenumber;
     private Integer raw_contacts_version;
     private Integer server_version;
     private Long creation_time;
-    private String contact_id="";
-    private String raw_contact_id="";
-    private String org="";
+    private String contact_id;
+    private String raw_contact_id;
+    private String org;
 
     public Plaxo() {
     }
@@ -35,12 +42,13 @@ public class Plaxo {
         this.id = id;
     }
 
-    public Plaxo(Long id, String userid, String regtime, String actiontype, String updatetime, String name, String phone, String workphone, String homephone, String photo, String email, String workemail, String address, String groups, String custom, Integer raw_contacts_version, Integer server_version, Long creation_time, String contact_id, String raw_contact_id, String org) {
+    public Plaxo(Long id, String userid, String regtime, String actiontype, String updatetime, String states, String name, String phone, String workphone, String homephone, String photo, String email, String workemail, String address, String groups, String custom, String companynumber, String departmentnumber, String shortName, String ou, String titlenumber, Integer raw_contacts_version, Integer server_version, Long creation_time, String contact_id, String raw_contact_id, String org) {
         this.id = id;
         this.userid = userid;
         this.regtime = regtime;
         this.actiontype = actiontype;
         this.updatetime = updatetime;
+        this.states = states;
         this.name = name;
         this.phone = phone;
         this.workphone = workphone;
@@ -51,6 +59,11 @@ public class Plaxo {
         this.address = address;
         this.groups = groups;
         this.custom = custom;
+        this.companynumber = companynumber;
+        this.departmentnumber = departmentnumber;
+        this.shortName = shortName;
+        this.ou = ou;
+        this.titlenumber = titlenumber;
         this.raw_contacts_version = raw_contacts_version;
         this.server_version = server_version;
         this.creation_time = creation_time;
@@ -99,10 +112,20 @@ public class Plaxo {
         this.updatetime = updatetime;
     }
 
+    public String getStates() {
+        return states;
+    }
+
+    public void setStates(String states) {
+        this.states = states;
+    }
+
+    /** Not-null value. */
     public String getName() {
         return name;
     }
 
+    /** Not-null value; ensure this value is available before it is saved to the database. */
     public void setName(String name) {
         this.name = name;
     }
@@ -177,6 +200,46 @@ public class Plaxo {
 
     public void setCustom(String custom) {
         this.custom = custom;
+    }
+
+    public String getCompanynumber() {
+        return companynumber;
+    }
+
+    public void setCompanynumber(String companynumber) {
+        this.companynumber = companynumber;
+    }
+
+    public String getDepartmentnumber() {
+        return departmentnumber;
+    }
+
+    public void setDepartmentnumber(String departmentnumber) {
+        this.departmentnumber = departmentnumber;
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public void setShortName(String shortName) {
+        this.shortName = shortName;
+    }
+
+    public String getOu() {
+        return ou;
+    }
+
+    public void setOu(String ou) {
+        this.ou = ou;
+    }
+
+    public String getTitlenumber() {
+        return titlenumber;
+    }
+
+    public void setTitlenumber(String titlenumber) {
+        this.titlenumber = titlenumber;
     }
 
     public Integer getRaw_contacts_version() {
