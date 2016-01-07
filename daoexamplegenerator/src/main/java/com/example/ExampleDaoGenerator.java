@@ -39,11 +39,12 @@ public class ExampleDaoGenerator {
         // 与在 Java 中使用驼峰命名法不同，默认数据库中的命名是使用大写和下划线来分割单词的。
         // For example, a property called “creationDate” will become a database column “CREATION_DATE”.
         note.addIdProperty();
-        note.addStringProperty("userid");
-        note.addStringProperty("regtime");
-        note.addStringProperty("actiontype").notNull();
-        note.addStringProperty("updatetime");
-        note.addStringProperty("name");
+        note.addStringProperty("userid");/*联系人服务器id*/
+        note.addStringProperty("regtime");/*写入时间*/
+        note.addStringProperty("actiontype");/*操作类型*/
+        note.addStringProperty("updatetime");/*操作时间*/
+        note.addStringProperty("states");/*当前状态*/
+        note.addStringProperty("name").notNull();
         note.addStringProperty("phone");
         note.addStringProperty("workphone");
         note.addStringProperty("homephone");
@@ -53,11 +54,16 @@ public class ExampleDaoGenerator {
         note.addStringProperty("address");
         note.addStringProperty("groups");
         note.addStringProperty("custom");
+        note.addStringProperty("companynumber");
+        note.addStringProperty("departmentnumber");/*所属组织编号*/
+        note.addStringProperty("shortName");/*名字拼音*/
+        note.addStringProperty("ou");/*所属组织名称*/
+        note.addStringProperty("titlenumber");/*职务编码*/
         note.addIntProperty("raw_contacts_version");
         note.addIntProperty("server_version");
         note.addLongProperty("creation_time");
         note.addStringProperty("contact_id");
         note.addStringProperty("raw_contact_id");
-        note.addStringProperty("org");
+        note.addStringProperty("org");/*单位名称*/
     }
 }
